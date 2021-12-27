@@ -20,12 +20,15 @@ import { Component, Input } from '@angular/core';
   // Below is an inline template within the component decorator instead of pointing to the .html template
   template: `
     <p>
-      <button>{{ value }}</button>
+      <!-- Pre Nebular: <button>{{ value }}</button> -->
+      <button nbButton *ngIf="!value">{{ value }}</button>
+      <button nbButton hero status="success" *ngIf="value == 'X'">{{ value }}</button>
+      <button nbButton hero status="info"  *ngIf="value == 'O'">{{ value }}</button>
       <!-- Demonstrating passing property value from constructor -->
       <!-- {{ rando }} -->
     </p>
   `,
-  styles: [],
+  styles: ['button  { margin: 0; position: absolute; height: 185px; width: 197px; text-align:center; font-size: 5em !important; }'],
 })
 export class SquareComponent {
   // Indicate that properties are passed to this component via Input

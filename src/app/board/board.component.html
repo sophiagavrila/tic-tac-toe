@@ -2,7 +2,10 @@
 <h1>Current Player: {{ player }} </h1>
 
 <!-- Event Binding in Angular -->
-<button (click)="newGame()">Start New Game</button>
+<!-- <button (click)="newGame()">Start New Game</button> -->
+
+<!-- Post Nebular -->
+<button nbButton outline status="danger" (click)="newGame()">Start new Game</button>
 
 <!-- Type * to see the different STRCUTURAL DIRECTIVES -->
 <!-- ngId means only render this HTML if the statement evaluated to truthy -->
