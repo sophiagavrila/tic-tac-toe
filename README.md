@@ -1,4 +1,5 @@
-# TicTacToe
+# Tic-Tac-Toe
+*A modern twist on an age old game - made with Angular and generated as a PWA.*
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
