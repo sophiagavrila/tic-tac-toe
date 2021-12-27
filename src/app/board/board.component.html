@@ -9,3 +9,18 @@
 <h2 *ngIf="winner">
   Player {{ winner }} won the game!
 </h2>
+
+<!-- ngFor renders the component multiple times based on the array of squares -->
+<main>
+  <!-- val is template variable which represents each square component element in array -->
+  <app-square
+    *ngFor="let val of squares; let i = index"
+    [value]="val"
+    (click)="makeMove(i)">
+    <!-- Why [value] = val ? So that we can pass down the data grabbed from parent component (board) to chiled (square) -->
+    <!-- We are also binding each square component to the makeMove() method with its index passed through. -->
+  </app-square>
+
+  <!--  Now add css styling -->
+
+</main>
