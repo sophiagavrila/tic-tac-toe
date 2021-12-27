@@ -58,9 +58,44 @@ export class BoardComponent implements OnInit {
       // start: The index at which to start changing the array.
       // deleteCount: An integer indicating the number of elements in the array to remove from start
       // item1: The elements to add to the array, beginning from start.
-      this.xIsNext = !this.xIsNext;
+      this.xIsNext = !this.xIsNext; // toggle xIsNext value to its opposite value
     }
     // don't do anything if it's not null (already been clicked)
+
+    // Lastly call the calculateWinner() method incase someone has one...
+    this.winner = this.calculateWinner();
   }
 
+  /**
+   * This method is an algorithm adopted from React's tic-tac-toe tutorial:
+   * https://reactjs.org/tutorial/tutorial.html#declaring-a-winner
+   *
+   * Given an array of 9 squares, this function will check for a winner and return 'X', 'O', or null.
+   */
+
+   calculateWinner() {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (
+        this.squares[a] &&
+        this.squares[a] === this.squares[b] &&
+        this.squares[a] === this.squares[c]
+      ) {
+        return this.squares[a];
+      }
+    }
+    return null;
+  }
+
+  // After completeing this, begin th  board.component.html template for design
 }
