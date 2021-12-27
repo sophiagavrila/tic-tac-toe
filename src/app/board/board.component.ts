@@ -34,6 +34,7 @@ export class BoardComponent implements OnInit {
     this.xIsNext = true;
   }
 
+  // TS getter (can invoke by this.player)
   get player() {
     return this.xIsNext ? 'X' : 'O';
     // if xIsNext is = to true, the next player is 'X'; if it's false, returns 'O'
